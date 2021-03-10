@@ -1,4 +1,8 @@
 document.querySelector('.dropdown').addEventListener('click', (e) => {
+    if(e.target.parentNode === document.querySelector('.dropdown__wrapper')) {
+        e._isClickWithinDropDown = true;
+        return;
+    }
     document.querySelector('.dropdown__wrapper').classList.toggle('show');
     e._isClickWithinDropDown = true;
 })
